@@ -1,0 +1,67 @@
+<!-- Group Member
+Udit Gami - Step 2, 4 , 5
+Gurleen Kaue - Step 1, 3
+
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lab 4 | COMP1073 Client-Side JavaScript</title>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1>Countdown</h1>
+    <div id="countdownDisplay"></div>
+
+    <script>
+      // STEP 1: Open this page in a browser tab and open up the console
+      // STEP 2: Build an HTML element above to contain the value of the var i (the counter inside the loop)
+      // STEP 3: Change the below loop to a DO/WHILE structure
+      // STEP 4: Add a condition with an IF statement that checks if countDown is zero - and if it is, output text to the HTML element above that reads, "Blastoff!"
+      // STEP 5: Change the background color of the page from yellow (from 8-5) , to orange (from 4-1), to red (at 0) using a SWITCH statement
+
+      // STEP 3
+      let i = 8;
+
+      function countdown() {
+        console.log(i);
+
+        // STEP 4: Add a condition to check if countDown is zero and display "Blastoff!"
+        if (i === 0) {
+          document.getElementById("countdownDisplay").textContent = "Blastoff!";
+        } else {
+          document.getElementById("countdownDisplay").textContent = i;
+        }
+
+        // STEP 5: Change the background color using a SWITCH statement
+        switch (i) {
+          case 8:
+          case 7:
+          case 6:
+          case 5:
+            document.body.style.backgroundColor = "yellow";
+            break;
+          case 4:
+          case 3:
+          case 2:
+          case 1:
+            document.body.style.backgroundColor = "orange";
+            break;
+          case 0:
+            document.body.style.backgroundColor = "red";
+            break;
+        }
+
+        i--; // Decrement the countdown variable
+
+        if (i >= 0) {
+          setTimeout(countdown, 1000); // Create a new timeout
+        }
+      }
+
+      countdown(); // Start the countdown
+    </script>
+  </body>
+</html>
